@@ -1,0 +1,29 @@
+# Spark Omarchy Theme Colors
+# Based on Sparkfabrik Design System
+
+accent = "#EB0000"
+cursor = "#eb0000"
+foreground = "#ffffff"
+background = "#031527"
+selection_foreground = "#ffffff"
+selection_background = "#eb0000"
+
+# Normal colors (ANSI 0-7)
+color0 = "#031527"
+color1 = "#eb0000"
+color2 = "#008844"
+color3 = "#f7ad2c"
+color4 = "#027aca"
+color5 = "#8d1971"
+color6 = "#40c6cf"
+color7 = "#ffffff"
+
+# Bright colors (ANSI 8-15)
+color8 = "#0c335a"
+color9 = "#f36931"
+color10 = "#68d366"
+color11 = "#f7ad2c"
+color12 = "#40c6cf"
+color13 = "#cd0089"
+color14 = "#027aca"
+color15 = "#ffffff"
