@@ -1,29 +1,35 @@
-# Spark Omarchy Theme Colors
-# Based on Sparkfabrik Design System
+# Spark Omarchy theme colors
+# Based on the SparkFabrik Design System
+# Omarchy 4 canonical named-key schema (drives all generated app configs)
 
-accent = "#EB0000"
-cursor = "#eb0000"
-foreground = "#ffffff"
-background = "#031527"
-selection_foreground = "#ffffff"
-selection_background = "#eb0000"
+mode = "dark"
 
-# Normal colors (ANSI 0-7)
-color0 = "#031527"
-color1 = "#eb0000"
-color2 = "#008844"
-color3 = "#f7ad2c"
-color4 = "#027aca"
-color5 = "#8d1971"
-color6 = "#40c6cf"
-color7 = "#ffffff"
+accent    = "#eb0000"  # Spark Red
+selection = "#eb0000"  # Spark Red
+muted     = "#0c335a"  # Spark Blue
 
-# Bright colors (ANSI 8-15)
-color8 = "#0c335a"
-color9 = "#f36931"
-color10 = "#68d366"
-color11 = "#f7ad2c"
-color12 = "#40c6cf"
-color13 = "#cd0089"
-color14 = "#027aca"
-color15 = "#ffffff"
+background         = "#031527"  # Spark Black
+dark_background    = "#02101d"
+darker_background  = "#020b14"
+lighter_background = "#0c335a"  # Spark Blue
+
+foreground        = "#ffffff"  # Spark White
+dark_foreground   = "#0c335a"  # Spark Blue
+light_foreground  = "#ffffff"
+bright_foreground = "#ffffff"
+
+red     = "#eb0000"  # Spark Red
+yellow  = "#f7ad2c"  # Spark Yellow
+orange  = "#f36931"  # Spark Orange
+green   = "#008844"  # Spark Dark Green
+cyan    = "#40c6cf"  # Spark Aquamarine
+blue    = "#027aca"  # Spark Light Blue
+magenta = "#8d1971"  # Spark Dark Purple
+brown   = "#7c5716"
+
+bright_red     = "#f36931"  # Spark Orange
+bright_yellow  = "#f7ad2c"  # Spark Yellow
+bright_green   = "#68d366"  # Spark Lime
+bright_cyan    = "#027aca"  # Spark Light Blue
+bright_blue    = "#40c6cf"  # Spark Aquamarine
+bright_magenta = "#cd0089"  # Spark Purple
