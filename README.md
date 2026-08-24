@@ -1,133 +1,121 @@
-# Spark Omarchy Theme ⚡
+# Spark Omarchy
 
-A bold, corporate-inspired theme based on Sparkfabrik's design system — featuring vibrant reds and deep blues with professional contrast. Perfect for developers who want their desktop to reflect enterprise-grade design standards.
+A corporate theme for [Omarchy](https://omarchy.org/) built on the SparkFabrik design system: Spark red on a deep navy background, with the full brand palette mapped onto the terminal and desktop.
 
-![Preview](preview.png)
+![Preview](preview.jpg)
 
-## Design Philosophy
+Requires **Omarchy 4**. Everything the theme colors is derived from `colors.toml`, so the terminal, the shell (bar, notifications, launcher, lock screen), Neovim, VS Code, btop, Hyprland borders and the rest follow the same palette without any per-app files.
 
-- **Bold Corporate Identity**: Strong reds and blues that command attention
-- **Professional Excellence**: Colors optimized for serious development work
-- **High Contrast**: Perfect readability in all lighting conditions
-- **Design System Consistency**: Every color carefully chosen from Sparkfabrik's palette
-
-## Color DNA
-
-### Primary Colors
-
-Purpose | Hex | RGB | Name
---------|-----|-----|-----
-Spark Red | `#EB0000` | rgb(235, 0, 0) | Primary Brand
-Spark Blue | `#0C335A` | rgb(12, 51, 90) | Secondary Brand
-Spark Black | `#031527` | rgb(3, 21, 39) | Deep Background
-Spark White | `#FFFFFF` | rgb(255, 255, 255) | Pure Text
-
-### Secondary Palette
-
-Role | Hex | RGB | Description
------|-----|-----|------------
-Light Blue | `#027ACA` | rgb(2, 122, 202) | Links & Highlights
-Aquamarine | `#40C6CF` | rgb(64, 198, 207) | Info Elements
-Orange | `#F36931` | rgb(243, 105, 49) | Warnings
-Yellow | `#F7AD2C` | rgb(247, 173, 44) | Attention
-Dark Green | `#008844` | rgb(0, 136, 68) | Success States
-Lime | `#68D366` | rgb(104, 211, 102) | Success Accents
-Dark Purple | `#8D1971` | rgb(141, 25, 113) | Special Elements
-Purple | `#CD0089` | rgb(205, 0, 137) | Highlights
-
-## Themed Applications
-
-- **Kitty Terminal**: Full Sparkfabrik color scheme with branded borders
-- **Ghostty Terminal**: Complete color palette with Sparkfabrik identity
-- **Waybar**: Corporate color variables for professional status bar
-- **Hyprland**: Bold red active borders with blue inactive states
-- **Mako Notifications**: Branded notification styling
-- **Neovim**: Dark theme optimized for the color palette
-- **VS Code**: Professional development environment colors
-
-## Installation
-
-### One-Command Install (Recommended)
-```bash
-omarchy-theme-install https://github.com/stefanomainardi/omarchy-sf-theme
-```
-
-This will automatically:
-- Download the theme to the correct location
-- Create necessary symlinks
-- Install the VSCode extension
-- Apply the theme across all supported applications
-
-### Manual Installation
-```bash
-# Clone the theme manually
-git clone https://github.com/stefanomainardi/omarchy-sf-theme ~/.local/share/omarchy/themes/spark-omarchy
-
-# Create symlink
-ln -sf ~/.local/share/omarchy/themes/spark-omarchy ~/.config/omarchy/themes/spark-omarchy
-
-# Install VSCode extension
-cd ~/.local/share/omarchy/themes/spark-omarchy
-./install-vscode.sh
-
-# Apply theme
-omarchy-theme-set spark-omarchy
-```
-
-### VSCode Extension
-
-The theme includes a complete VSCode extension that survives system updates:
+## Install
 
 ```bash
-# Install VSCode extension manually
-cd ~/.local/share/omarchy/themes/spark-omarchy
-./install-vscode.sh
-
-# The extension will appear in VSCode's theme dropdown as "Spark Omarchy"
-# Or use Omarchy's automatic integration:
-omarchy-theme-set spark-omarchy
+omarchy theme install https://github.com/stefanomainardi/spark-omarchy
 ```
 
-**Post-Update Recovery**: If system updates remove the VSCode extension, simply run `./install-vscode.sh` again.
+That clones the repo into `~/.config/omarchy/themes/spark-omarchy` and applies it. To switch later, use `omarchy theme set spark-omarchy` or pick it from the theme menu.
 
-## Included Backgrounds
+To update:
 
-The theme comes with 4 professional wallpapers:
+```bash
+omarchy theme update
+```
 
-- **1-spark-corporate.png**: Bold red and blue corporate design (Default)
-- **2-spark-mountains.png**: Minimalist mountain landscape with Spark colors
-- **3-spark-abstract.png**: Abstract geometric patterns in brand colors
-- **4-spark-gradient.png**: Clean gradient design with corporate identity
+## Boot and unlock screen
 
-**Cycling Backgrounds:** Use `omarchy-theme-bg-next` to cycle through wallpapers.
+The theme ships its own Plymouth logo (`unlock.png`, the SparkFabrik wordmark). Apply it with:
 
-**Pro Tip:** All backgrounds are optimized at 3840x2160 (4K) for crisp display across all monitors.
+```bash
+omarchy plymouth set-by-theme spark-omarchy
+```
+
+The theme also appears in the unlock screen picker (`omarchy plymouth switcher`).
+
+## Screensaver
+
+The theme carries the SparkFabrik logo as screensaver art in `screensaver.txt`. Omarchy reads its screensaver art from a single global file, so a small `theme-set` hook is included to keep the art tied to the active theme: activate Spark and you get the Spark logo, switch away and the stock Omarchy logo comes back.
+
+Install the hook once:
+
+```bash
+mkdir -p ~/.config/omarchy/hooks/theme-set.d
+cp ~/.config/omarchy/themes/spark-omarchy/hooks/theme-set.d/screensaver-branding \
+   ~/.config/omarchy/hooks/theme-set.d/
+omarchy theme set spark-omarchy
+```
+
+Test it with `omarchy-launch-screensaver force` (press any key to dismiss).
+
+Without the hook the theme still works, the screensaver simply keeps whatever art is already set. If you would rather not use a hook, set the logo once by hand with `omarchy branding screensaver image`.
+
+## Backgrounds
+
+Nine wallpapers, cycled with `omarchy theme bg next` or picked from the background switcher.
+
+| File | Description |
+| --- | --- |
+| `1-spark-corporate.jpg` | Red and blue corporate design (default) |
+| `2-spark-mountains.jpg` | Mountain landscape in Spark colors |
+| `3-spark-abstract.jpg` | Abstract shapes in brand colors |
+| `4-spark-gradient.jpg` | Clean brand gradient |
+| `5-spark-mountains-a.jpg` | Mountains A, split peak with a bright core |
+| `6-spark-mountains-b.jpg` | Mountains B, red and blue burst |
+| `7-spark-mountains-c.jpg` | Mountains C, peak under a blue nebula |
+| `8-spark-mountains-d.jpg` | Mountains D, soft red and blue split |
+| `9-spark-mountains-e.jpg` | Mountains E, mountain range under a red and blue sky |
+
+All of them are 3360x1440, framed for ultrawide displays. Extra wallpapers of your own can go in `~/.config/omarchy/backgrounds/spark-omarchy/`; they join the same cycle without touching the theme.
+
+## Palette
+
+### Primary
+
+| Purpose | Hex | Name |
+| --- | --- | --- |
+| Spark Red | `#eb0000` | Primary brand |
+| Spark Blue | `#0c335a` | Secondary brand |
+| Spark Black | `#031527` | Background |
+| Spark White | `#ffffff` | Text |
+
+### Secondary
+
+| Role | Hex | Used for |
+| --- | --- | --- |
+| Light Blue | `#027aca` | Links and highlights |
+| Aquamarine | `#40c6cf` | Info |
+| Orange | `#f36931` | Warnings |
+| Yellow | `#f7ad2c` | Attention |
+| Dark Green | `#008844` | Success |
+| Lime | `#68d366` | Success accents |
+| Dark Purple | `#8d1971` | Special elements |
+| Purple | `#cd0089` | Highlights |
+
+## What is in here
+
+| File | Role |
+| --- | --- |
+| `colors.toml` | The palette. Every generated app config comes from this file |
+| `shell.lock.toml` | Lock screen colors, overriding the `[lock]` section of the generated shell config |
+| `icons.theme` | GTK icon theme name |
+| `keyboard.rgb` | Backlight color for supported keyboards |
+| `preview.jpg` | Thumbnail in the theme switcher |
+| `unlock.png` | Logo for the Plymouth boot screen |
+| `preview-unlock.png` | Thumbnail in the unlock screen picker |
+| `screensaver.txt` | Screensaver art |
+| `backgrounds/` | Wallpapers |
+| `hooks/theme-set.d/` | Optional hook that scopes the screensaver art to the active theme |
+
+To change a color, edit `colors.toml` and run `omarchy theme set spark-omarchy`. Do not add per-app config files unless you mean to override a generated one: a file shipped by the theme always wins over the generated version.
 
 ## Contributing
 
-Found a bug or want to improve the theme?
-
-1. Fork this repository
-2. Create your feature branch (`git checkout -b feature/amazing-improvement`)
-3. Commit your changes (`git commit -m 'Add amazing improvement'`)
-4. Push to the branch (`git push origin feature/amazing-improvement`)
-5. Open a Pull Request
-
-## About Sparkfabrik
-
-This theme is inspired by [Sparkfabrik's](https://www.sparkfabrik.com/) corporate design system. Sparkfabrik is a leading digital innovation company specializing in enterprise web development and digital transformation.
-
-## License
-
-MIT License - feel free to modify and distribute!
+Issues and pull requests are welcome. If you change a color, please say which brand color it comes from.
 
 ## Credits
 
-- **Theme Author**: Stefano Mainardi
-- **Color System**: Based on Sparkfabrik Design System
-- **Base Distribution**: Omarchy Linux
-- **Inspiration**: Enterprise design meets developer productivity
+Theme by Stefano Mainardi, built on the SparkFabrik design system for Omarchy Linux. The theme started as a color substitution over [Catppuccin for Omarchy](https://github.com/catppuccin) and has since been rebuilt around the Omarchy 4 palette schema.
 
----
+## License
 
-⚡ **Spark your development environment!** ⚡
+The theme code and configuration are MIT licensed, see [LICENSE](LICENSE).
+
+The SparkFabrik name, logo and wallpapers are property of SparkFabrik S.r.l. and are included here with permission. They are **not** covered by the MIT license and may not be reused to identify another product or organization. See [NOTICE](NOTICE).
