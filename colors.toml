@@ -4,32 +4,52 @@
 
 mode = "dark"
 
-accent    = "#eb0000"  # Spark Red
-selection = "#eb0000"  # Spark Red
-muted     = "#0c335a"  # Spark Blue
+# accent: Spark Red
+accent = "#eb0000"
+# selection: Spark Red
+selection = "#eb0000"
+# muted: Spark Blue
+muted = "#0c335a"
 
-background         = "#031527"  # Spark Black
-dark_background    = "#02101d"
-darker_background  = "#020b14"
-lighter_background = "#0c335a"  # Spark Blue
+# background: Spark Black
+background = "#031527"
+dark_background = "#02101d"
+darker_background = "#020b14"
+# lighter_background: Spark Blue
+lighter_background = "#0c335a"
 
-foreground        = "#ffffff"  # Spark White
-dark_foreground   = "#0c335a"  # Spark Blue
-light_foreground  = "#ffffff"
+# foreground: Spark White
+foreground = "#ffffff"
+# dark_foreground: Spark Blue
+dark_foreground = "#0c335a"
+light_foreground = "#ffffff"
 bright_foreground = "#ffffff"
 
-red     = "#eb0000"  # Spark Red
-yellow  = "#f7ad2c"  # Spark Yellow
-orange  = "#f36931"  # Spark Orange
-green   = "#008844"  # Spark Dark Green
-cyan    = "#40c6cf"  # Spark Aquamarine
-blue    = "#027aca"  # Spark Light Blue
-magenta = "#8d1971"  # Spark Dark Purple
-brown   = "#7c5716"
+# red: Spark Red
+red = "#eb0000"
+# yellow: Spark Yellow
+yellow = "#f7ad2c"
+# orange: Spark Orange
+orange = "#f36931"
+# green: Spark Dark Green
+green = "#008844"
+# cyan: Spark Aquamarine
+cyan = "#40c6cf"
+# blue: Spark Light Blue
+blue = "#027aca"
+# magenta: Spark Dark Purple
+magenta = "#8d1971"
+brown = "#7c5716"
 
-bright_red     = "#f36931"  # Spark Orange
-bright_yellow  = "#f7ad2c"  # Spark Yellow
-bright_green   = "#68d366"  # Spark Lime
-bright_cyan    = "#027aca"  # Spark Light Blue
-bright_blue    = "#40c6cf"  # Spark Aquamarine
-bright_magenta = "#cd0089"  # Spark Purple
+# bright_red: Spark Orange
+bright_red = "#f36931"
+# bright_yellow: Spark Yellow
+bright_yellow = "#f7ad2c"
+# bright_green: Spark Lime
+bright_green = "#68d366"
+# bright_cyan: Spark Light Blue
+bright_cyan = "#027aca"
+# bright_blue: Spark Aquamarine
+bright_blue = "#40c6cf"
+# bright_magenta: Spark Purple
+bright_magenta = "#cd0089"

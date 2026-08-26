@@ -106,6 +106,8 @@ All of them are 3360x1440, framed for ultrawide displays. Extra wallpapers of yo
 
 To change a color, edit `colors.toml` and run `omarchy theme set spark-omarchy`. Do not add per-app config files unless you mean to override a generated one: a file shipped by the theme always wins over the generated version.
 
+Keep comments in `colors.toml` on their own line. Not every consumer parses TOML properly: Omawrite, the editor Omarchy ships, reads the file line by line and does not strip a trailing comment, so `foreground = "#ffffff"  # white` leaves it with an unusable value and the editor renders invisible text on a transparent window.
+
 ## Contributing
 
 Issues and pull requests are welcome. If you change a color, please say which brand color it comes from.
